@@ -1,0 +1,101 @@
+/* -------------------- General Styling ------------------------------- */
+body {
+    text-align: center;
+    font-size: 100%;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+/* mouse over link (pseudo-class <anchor>) */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link (pseudo-class <anchor>) */
+a:active {
+    color: #0000FF;
+}
+
+/* styling of elements in #headers <div> */
+#headers {
+    font-size: 1.5em;
+}
+
+/* styling of logo class (all elements with "logo" as class will have this styling) */
+.logo {
+    float: right;
+    width: 115px;
+}
+/* -------------------- General Styling ------------------------------- */
+
+/* -------------------- Login page styling ---------------------------- */
+/* styling of <div> login form form */
+#loginForm form {
+    text-align: left;
+}
+
+/* styling of <div> login form fieldset */
+#loginForm fieldset {
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 12px;
+}
+
+/* styling of <div> login form legend */
+#loginForm legend {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+/* styling of username and password input */
+input[type=text],input[type=password] {
+    border-radius:6px;
+    height: 25px;
+}
+
+/* styling of username and password when focused */
+input[type=text]:focus,input[type=password]:focus {
+    background-color:lightblue;
+}
+
+/* styling of submit input */
+input[type=submit]:hover {
+    background-color: darkgray;
+}
+/* -------------------- Login page styling ---------------------------- */
+
+/* -------------------- Useradmin-page/table styling ------------------ */
+/* general styling of table */
+table, th, td {
+    border: 1px solid black;
+}
+
+/* table */
+table {
+    /*border-collapse: collapse;*/
+    width: auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* table row. every even row has a color. */
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+/* table header. */
+th {
+    height: 50px;
+    padding: 3px;
+    background-color: darkgray;
+}
+
+/* table data(cell). */
+td {
+    height: auto;
+    vertical-align: center;
+    padding: 5px;
+}
+
+/* makes table scrollable if window size is too small */
+#table {
+    overflow-x: auto;
+}
+/* -------------------- Useradmin-page/table styling ------------------ */

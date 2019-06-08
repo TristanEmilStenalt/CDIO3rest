@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+    <div id="loginPage">
+
+        <div id="headers">
+            <h1>Brugeradministration login side</h1>
+            <h2>Gruppe 26</h2>
+        </div>
+
+        <div id="loginForm">
+                <fieldset>
+                    <legend>Brugeradministration login:</legend>
+                    <img class="logo" src="https://nunataryuk.org/images/Logos/dtu_logo.png" alt="DTU logo">
+                    Brugernavn:<br>
+                    <input type="text" id="username" name="username"><br>
+                    Kodeord:<br>
+                    <input type="password" id="password" name="password"><br>
+                    <br>
+                    <input type="submit" id="loginButton" value="Login">
+                </fieldset>
+        </div>
+    </div>
+
+    <div id="adminPage">
+
+        <script>
+            $(document).ready(function(){
+                $("#adminPage").hide();
+            });
+        </script>
+
+        <div id="adminPageMenu">
+            <h3>Menu</h3>
+            <a class="editPageShow">Opret bruger</a> | <a class="logoutPageShow">Logud</a><br>
+        </div>
+
+        <h1>Brugeradministration</h1>
+        <br>
+        <br>
+
+        <div id="table">
+            <table class="mintabel">
+                <tr>
+                    <th>BrugerID</th>
+                    <th>Brugernavn</th>
+                    <th>Initialer</th>
+                    <th>CPR</th>
+                    <th>Kodeord</th>
+                    <th>Rolle(r)</th>
+                </tr>
+
+                <!-- Temporary Example fill -->
+                <tr>
+                    <td>1</td>
+                    <td>BrianTheMan</td>
+                    <td>Administrator</td>
+                    <td>Brian</td>
+                    <td>Anker Engelundsvej</td>
+                    <td>1</td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>AA</td>
+                    <td>Bruger</td>
+                    <td>Anders</td>
+                    <td>Paradisæblevej</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>RA</td>
+                    <td>Bruger</td>
+                    <td>Rip</td>
+                    <td>Paradisæblevej</td>
+                    <td>13</td>
+                </tr>
+                <!-- Temporary  Example fill-->
+            </table>
+        </div>
+    </div>
+
+    <div id="editPage">
+
+        <script>
+            $(document).ready(function(){
+                $("#editPage").hide();
+            });
+        </script>
+
+        <div id="editPageMenu">
+            <h3>Menu</h3>
+            <a class="adminPageShow">Tilbage til Brugeradministration</a> | <a class="logoutPageShow">Logud</a><br>
+        </div>
+
+        <div id="createUserForm">
+
+            <h1>Opret bruger</h1>
+            <p>Bruger ID: (X)</p>
+            <form>
+                Brugernavn:<br>
+                <input id="newUsername" type="text" name="username"><br>
+                Fornavn:<br>
+                <input id="newFirstname" type="text" name="firstname"><br>
+                Ini:<br>
+                <input id="newInitials" type="text" name="initials"><br>
+                CPR:<br>
+                <input id="newCPR" type="text" name="CPR"><br>
+                Kodeord:<br>
+                <input id="newPassword" type="text" name="password"><br>
+                <br>
+                Rolle(r):<br>
+                <input class="check-box" type="checkbox" name="rolle" value="Administrator" checked> Administrator
+                <input class="check-box" type="checkbox" name="rolle" value="Pharmaceut"> Pharmaceut
+                <input class="check-box" type="checkbox" name="rolle" value="Produktionsleder"> Produktionsleder
+                <input class="check-box" type="checkbox" name="rolle" value="Laborant"> Laborant
+                <br> <br>
+                <p><button type="button" onclick="setPersonInfo()">Save</button></p>
+                <input id="createUserButton" type="submit" value="Opret bruger">
+                <br>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="userInfo.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
