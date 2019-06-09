@@ -105,26 +105,28 @@
         <div id="createUserForm">
 
             <h1>Opret bruger</h1>
-            <p>Bruger ID: (X)</p>
-            <form>
+            <!--<p>Bruger ID: (X)</p>-->
+            <form id="userform">
+                BrugerID:<br>
+                <input id="newUserId" type="text" name="userId"><br>
                 Brugernavn:<br>
-                <input id="newUsername" type="text" name="username"><br>
-                Fornavn:<br>
-                <input id="newFirstname" type="text" name="firstname"><br>
-                Ini:<br>
-                <input id="newInitials" type="text" name="initials"><br>
-                CPR:<br>
-                <input id="newCPR" type="text" name="CPR"><br>
+                <input id="newUsername" type="text" name="userName"><br>
+                <!--Fornavn:<br>-->
+                <!--<input id="newFirstname" type="text" name="firstname"><br>-->
+                Initialer:<br>
+                <input id="newInitials" type="text" name="ini"><br>
+                <!--CPR:<br>-->
+                <!--<input id="newCPR" type="text" name="CPR"><br>-->
                 Kodeord:<br>
                 <input id="newPassword" type="text" name="password"><br>
                 <br>
                 Rolle(r):<br>
-                <input class="check-box" type="checkbox" name="rolle" value="Administrator" checked> Administrator
-                <input class="check-box" type="checkbox" name="rolle" value="Pharmaceut"> Pharmaceut
-                <input class="check-box" type="checkbox" name="rolle" value="Produktionsleder"> Produktionsleder
-                <input class="check-box" type="checkbox" name="rolle" value="Laborant"> Laborant
+                <input class="check-box" type="checkbox" name="roles" value="Administrator" checked> Administrator
+                <input class="check-box" type="checkbox" name="roles" value="Pharmaceut"> Pharmaceut
+                <input class="check-box" type="checkbox" name="roles" value="Produktionsleder"> Produktionsleder
+                <input class="check-box" type="checkbox" name="roles" value="Laborant"> Laborant
                 <br> <br>
-                <p><button type="button" onclick="setPersonInfo()">Save</button></p>
+                <!--<p><button type="button" onclick="setPersonInfo()">Save</button></p>-->
                 <input id="createUserButton" type="submit" value="Opret bruger">
                 <br>
             </form>
