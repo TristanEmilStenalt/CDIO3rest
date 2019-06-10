@@ -30,19 +30,24 @@ $("#loginButton").click(function () {
  */
 function createUser() {
     event.preventDefault();
-    // var data = $('#userform').serialize();
-    var userInfo = $('#userform:not([type="checkbox"])').serialize();
-    var array_values = [];
-    $('#userform [type=checkbox]').each( function() { // For hver tjekket checkbox, put værdien i array.
-        if( $(this).is(':checked') ) {
-            array_values.push( $(this).val() );
-        }
-    });
-    var roles = array_values.join("&");
-    console.log(roles+"\n");
+    var userSamlet = $('#userform').serializeJSON();
+
+    // var userInfo = $('#userform').not(type=checkbox).serialize();
+    // var userInfo = $('#userform:not([type=checkbox])').serialize();
+
+    // var userInfo = $('#userform [type=number], [type=text]').serializeJSON();
+    // var array_values = [];
+    // $('#userform [type=checkbox]').each( function() { // For hver tjekket checkbox, put værdien i array.
+    //     if( $(this).is(':checked') ) {
+    //         array_values.push( $(this).val() );
+    //     }
+    // });
+    // var roles = array_values.join(",");
+    // console.log(userInfo+"\n");
+    // console.log(roles+"\n");
 
     // var data2 = $('#userform [type="checkbox"]').map(function () { return "roles"+"="+this.checked;}).get().join();
-    var userSamlet = userInfo+roles;
+    // var userSamlet = userInfo+"&roles="+roles;
     console.log(userSamlet);
 
     $.ajax(
@@ -50,10 +55,10 @@ function createUser() {
             url: 'rest/user',
             method: 'POST',
             contentType: "application/json",
-            data: user,
-            success: function (user) {
-                alert(JSON.stringify(user));
-                console.log(user);
+            data: userSamlet,
+            success: function (userSamlet) {
+                alert(JSON.stringify(userSamlet));
+                console.log(userSamlet);
             }
         }
     ) //ajax end

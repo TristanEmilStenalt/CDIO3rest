@@ -6,6 +6,7 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="jquery.serialize-object.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                     <legend>Brugeradministration login:</legend>
                     <img class="logo" src="https://nunataryuk.org/images/Logos/dtu_logo.png" alt="DTU logo">
                     Brugernavn:<br>
-                    <input type="text" id="username" name="username"><br>
+                    <!--<input type="text" id="username" name="username"><br>-->
                     Kodeord:<br>
                     <input type="password" id="password" name="password"><br>
                     <br>
@@ -121,7 +122,7 @@
                 <input id="newPassword" type="text" name="password"><br>
                 <br>
                 Rolle(r):<br>
-                <input class="check-box" type="checkbox" name="roles" value="Administrator" checked> Administrator
+                <input class="check-box" type="checkbox" name="roles" value="Administrator"> Administrator
                 <input class="check-box" type="checkbox" name="roles" value="Pharmaceut"> Pharmaceut
                 <input class="check-box" type="checkbox" name="roles" value="Produktionsleder"> Produktionsleder
                 <input class="check-box" type="checkbox" name="roles" value="Laborant"> Laborant
