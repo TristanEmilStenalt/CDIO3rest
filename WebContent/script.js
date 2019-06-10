@@ -30,25 +30,26 @@ $("#loginButton").click(function () {
  */
 function createUser() {
     event.preventDefault();
-    var userSamlet = $('#userform').serializeJSON();
-
     // var userInfo = $('#userform').not(type=checkbox).serialize();
     // var userInfo = $('#userform:not([type=checkbox])').serialize();
+    // var userInfo = $('#userform [type=number],[type=text]');
+    var userInfo = $('#userform').serializeJSON();
+    console.log(userInfo);
 
-    // var userInfo = $('#userform [type=number], [type=text]').serializeJSON();
     // var array_values = [];
     // $('#userform [type=checkbox]').each( function() { // For hver tjekket checkbox, put værdien i array.
     //     if( $(this).is(':checked') ) {
     //         array_values.push( $(this).val() );
     //     }
     // });
+    // console.log(array_values);
     // var roles = array_values.join(",");
-    // console.log(userInfo+"\n");
-    // console.log(roles+"\n");
+    // console.log(roles);
 
-    // var data2 = $('#userform [type="checkbox"]').map(function () { return "roles"+"="+this.checked;}).get().join();
-    // var userSamlet = userInfo+"&roles="+roles;
-    console.log(userSamlet);
+
+    //var userSamlet = userInfo+"&roles=["+roles+"]";
+    //console.log(userSamlet);
+    var userSamlet = userInfo;
 
     $.ajax(
         {

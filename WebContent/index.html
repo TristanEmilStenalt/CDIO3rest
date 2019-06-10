@@ -122,11 +122,12 @@
                 <input id="newPassword" type="text" name="password"><br>
                 <br>
                 Rolle(r):<br>
-                <input class="check-box" type="checkbox" name="roles" value="Administrator"> Administrator
-                <input class="check-box" type="checkbox" name="roles" value="Pharmaceut"> Pharmaceut
-                <input class="check-box" type="checkbox" name="roles" value="Produktionsleder"> Produktionsleder
-                <input class="check-box" type="checkbox" name="roles" value="Laborant"> Laborant
+                <input class="check-box" type="checkbox" name="roles[]" value="Administrator"> Administrator
+                <input class="check-box" type="checkbox" name="roles[]" value="Pharmaceut"> Pharmaceut
+                <input class="check-box" type="checkbox" name="roles[]" value="Produktionsleder"> Produktionsleder
+                <input class="check-box" type="checkbox" name="roles[]" value="Laborant"> Laborant
                 <br> <br>
+
 
                 <!--<select id="roles" name="roles">-->
                 <!--<option value="Administrator">Administrator1</option>-->
@@ -140,6 +141,7 @@
                 <!--<input id="createUserButton" type="submit" onclick="createUser()" value="Opret bruger">-->
                 <button onclick="createUser();">Opret bruger</button>
                 <br>
+
             </form>
         </div>
     </div>
