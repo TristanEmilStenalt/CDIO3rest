@@ -62,11 +62,11 @@ public class UserService { // Start på UserService klasse.
         //putIfAbsent returner null hvis id ikke eksisterer. returner nøgle-værdien(UserDTO) hvis id eksisterer.
         if (users.putIfAbsent(user.getUserId(), user) == null)
         {
-            //System.out.println(getUserList()); // printer brugere fra Mappen. Til test formål.
+            System.out.println(getUserList()); // printer brugere fra Mappen. Til test formål.
             return Response.ok("Det gik godt. Bruger tilføjet!").build();
         }
         else {
-            //System.out.println(getUserList());
+            System.out.println(getUserList());
             throw new InvalidIdException("ID " + user.getUserId() + " er allerede i brug!");
         }
     }

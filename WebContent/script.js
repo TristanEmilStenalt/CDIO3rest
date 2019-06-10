@@ -28,25 +28,57 @@ $("#loginButton").click(function () {
 /**
  * Metode til at sende data til serveren når der skal oprettes bruger.
  */
-
-$("#createUserButton").click(function () {
-    $.ajax({
-        url : "/rest/user",
-        data : $('div#createUserForm').serializeJSON(),
-        contentType : "application/json",
-        method : 'POST',
-        success : function(data){
-            alert(data);
-        },
-        error : function(jqXHR, text, error){
-            alert(jqXHR.status + text + error);
+function createUser() {
+    event.preventDefault();
+    // var data = $('#userform').serialize();
+    var userInfo = $('#userform:not([type="checkbox"])').serialize();
+    var array_values = [];
+    $('#userform [type=checkbox]').each( function() { // For hver tjekket checkbox, put værdien i array.
+        if( $(this).is(':checked') ) {
+            array_values.push( $(this).val() );
         }
-    })
+    });
+    var roles = array_values.join("&");
+    console.log(roles+"\n");
 
-    $("#adminPage").show();
-    $("#editPage").hide();
+    // var data2 = $('#userform [type="checkbox"]').map(function () { return "roles"+"="+this.checked;}).get().join();
+    var userSamlet = userInfo+roles;
+    console.log(userSamlet);
 
-});
+    $.ajax(
+        {
+            url: 'rest/user',
+            method: 'POST',
+            contentType: "application/json",
+            data: user,
+            success: function (user) {
+                alert(JSON.stringify(user));
+                console.log(user);
+            }
+        }
+    ) //ajax end
+} //createUser end
+
+
+// $("#createUserButton").click(function () {
+//     $.ajax({
+//         url : "/rest/user",
+//         data : $('div#createUserForm').serializeJSON(),
+//         contentType : "application/json",
+//         method : 'POST',
+//         success : function(data){
+//             alert(data);
+//         },
+//         error : function(jqXHR, text, error){
+//             alert(jqXHR.status + text + error);
+//         }
+//     })
+//
+//     $("#adminPage").show();
+//     $("#editPage").hide();
+//
+// });
+
 /**
  * Metode til at sende brugeren tilbage til menuen efter man har
  * oprettet en bruger

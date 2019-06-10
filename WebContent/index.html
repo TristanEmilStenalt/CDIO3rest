@@ -108,7 +108,7 @@
             <!--<p>Bruger ID: (X)</p>-->
             <form id="userform">
                 BrugerID:<br>
-                <input id="newUserId" type="text" name="userId"><br>
+                <input id="newUserId" type="number" name="userId"><br>
                 Brugernavn:<br>
                 <input id="newUsername" type="text" name="userName"><br>
                 <!--Fornavn:<br>-->
@@ -126,8 +126,18 @@
                 <input class="check-box" type="checkbox" name="roles" value="Produktionsleder"> Produktionsleder
                 <input class="check-box" type="checkbox" name="roles" value="Laborant"> Laborant
                 <br> <br>
+
+                <!--<select id="roles" name="roles">-->
+                <!--<option value="Administrator">Administrator1</option>-->
+                <!--<option value="Pharmaceut">Pharmaceut1</option>-->
+                <!--<option value="Produktionsleder">Produktionsleder1</option>-->
+                <!--<option value="Laborant">Laborant1</option>-->
+                <!--</select>-->
+
+
                 <!--<p><button type="button" onclick="setPersonInfo()">Save</button></p>-->
-                <input id="createUserButton" type="submit" value="Opret bruger">
+                <!--<input id="createUserButton" type="submit" onclick="createUser()" value="Opret bruger">-->
+                <button onclick="createUser();">Opret bruger</button>
                 <br>
             </form>
         </div>
